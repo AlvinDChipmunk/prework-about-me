@@ -1,0 +1,722 @@
+name="sName"
+name="sEmail"
+name="sPhone"
+name="sSubject"
+name="sMessage"
+
+name="name"
+name="email"
+name="phone"
+name="subject"
+name="message"
+
+
+<?php
+
+// http://www.mydomain.com/index.php?argument1=arg1&argument2=arg2
+
+if ($_GET) {
+    $argument1 = $_GET['argument1'];
+    $argument2 = $_GET['argument2'];
+} else {
+    $argument1 = $argv[1];
+    $argument2 = $argv[2];
+}
+?>
+
+Shannon Gibson
+Brian Grandis
+Michael Huey
+William Ims
+Jamie Knight
+Matthew Rocca
+Karen Whealdon
+Len Whealdon
+Jack Wizafir
+
+Cinemason Productions
+8810-C Jamacha Boulevard, Suite 309
+Spring Valley, CA 91977
+United States
+
+Tasks: 
+ - Re divide films into 3, not two, categories
+	Feature length, short films, YouTube videos
+
+Feature Length - 
+Mission Apocalypse: Part 2
+http://www.imdb.com/title/tt5608182/?ref_=nm_flmg_cin_2
+Mission Apocalypse
+http://www.imdb.com/title/tt4504638/?ref_=nm_flmg_cin_3
+A Harlequin in Darkness
+http://www.imdb.com/title/tt4991434/?ref_=nm_flmg_cin_5
+Whitefire
+http://www.imdb.com/title/tt2602256/?ref_=nm_flmg_cin_8
+ 
+Short Films - 
+The Stranglehold: Pillagers of the Lost Treasure
+http://www.imdb.com/title/tt5043532/?ref_=nm_flmg_cin_4
+The Deep End
+http://www.imdb.com/title/tt4530892/?ref_=nm_flmg_cin_6
+School Is for L.O.S.E.R.S.
+http://www.imdb.com/title/tt5000742/?ref_=nm_flmg_cin_7
+Treachery and a Dead Man's Promise
+http://www.imdb.com/title/tt3607202/?ref_=nm_flmg_cin_9
+
+YouTube Videos - 
+The Demon Couch
+https://www.youtube.com/watch?v=8-As7ZEtT3U
+First Date
+Cursed Mistletoe
+Fandoms Anonymous
+
+Other
+Captain Alpha and Techie (TV Mini-Series) (filming) 
+CrossFire(?) - Trigger Bunny and two other Acts
+Whitefire Presents:  Ripper Dragon (Baldy-ness)
+
+ - Look at Mike Mason's IMdb web page to get full list of films and get them arranged into the right categories
+Done, see above notes
+
+ - Try to get as much imagery from IMdb for each film
+Need screen shots from Mike
+
+ - Each Category has its own page, much like "Movies" currently has
+
+ - Create email "cinemason@cognosislabs.com" to allow web email script to collect web form email message data
+Is actually cinemason@cinemasonproductions.cognosislabs.com.  Tested succesfully to collect web 
+form data.  Now trying to figure out how to forward such messages to cinemason@yahoo.com
+
+ - Figure out how to forward messages from cinemason@cognosislabs.com to cinemason@yahoo.com
+
+ - Prepare at least home page to play background music
+Need music source files from Mike 
+
+		<!--==============================header=================================-->
+		<header id="header">
+			<div class="container">
+				<h1 class="navbar-brand navbar-brand_">
+					<a href="index.html"><img alt="CineMason Productions words only logo" src="img/logo_sm_01_onlyWords.png"></a>
+					</h1>
+			</div>
+			
+			<div class="menuheader">
+				<div class="container">
+					<nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
+						<ul class="nav sf-menu">
+							<li class="active"><a href="index.html"                                                     >Home</a></li>
+							<li class="active"><a href="trailers.html"                                                  >Trailers</a></li>
+
+							<li class="active"><a href="feature_length.html"                                            >Feature<br>Length</a>
+							<ul>
+								<li><img src="img/arrowup.png" alt="">
+								<a     href="http://www.imdb.com/title/tt4504638/?ref_=nv_sr_2"        target="_blank" >Mission Apocalypse</a></li>
+								<li><a href="http://www.imdb.com/title/tt5608182/?ref_=nv_sr_3"        target="_blank" >Mission Apocalypse pt. 2</a></li>
+								<li><a href="http://www.imdb.com/title/tt2602256/?ref_=fn_al_tt_1"     target="_blank" >Whitefire</a></li>
+								<li><a href="http://www.imdb.com/title/tt4991434/?ref_=nv_sr_1"        target="_blank" >A Harlequin in Darkness</a></li>
+							</ul></li>
+
+							<li class="active"><a href="short_films.html"                                               >Short<br>Films</a>
+							<ul>
+								<li><img src="img/arrowup.png" alt="">
+								<a     href="http://www.imdb.com/title/tt5043532/?ref_=nm_flmg_cin_4"  target="_blank" >The Stranglehold: Pillagers of the Lost Treasure</a></li>
+								<li><a href="http://www.imdb.com/title/tt4530892/?ref_=nm_flmg_cin_6"  target="_blank" >The Deep End</a></li>
+								<li><a href="http://www.imdb.com/title/tt5000742/?ref_=nm_flmg_cin_7"  target="_blank" >School Is for L.O.S.E.R.S.</a></li>
+								<li><a href="http://www.imdb.com/title/tt3607202/?ref_=nm_flmg_cin_9"  target="_blank" >Treachery and a Dead Man's Promise</a></li>
+							</ul></li>
+
+							<li class="active"><a href="youtube_videos.html"                                            >YouTube<br>Videos</a>
+							<ul>
+								<li><img src="img/arrowup.png" alt="">
+								<a     href="https://www.youtube.com/watch?v=8-As7ZEtT3U"              target="_blank" >The Demon Couch</a></li>
+								<li><a href="#"                                                                        >First Date</a></li>
+								<li><a href="#"                                                                        >Cursed Mistletoe</a></li>
+								<li><a href="#"                                                                        >Fandoms Anonymous</a></li>
+							</ul></li>
+
+							<li class="active"><a href="news_events.html"                                               >News/Events</a>
+							<ul>
+								<li><a href="news_events.html#CinemasonLatestNews"                                     >Latest</a></li>
+								<li><a class="last" href="news_events.html#CinemasonNewsArchive"                       >Archive</a></li>
+							</ul></li>
+
+							<li class="active"><a href="shop.html"                                                      >Shop</a></li>
+							<li class="active"><a href="contact.html"                                                   >Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+
+<===============================================================>
+Mission Apocalypse: Part 2 
+
+Director
+Michael Mason	
+Co Director
+Riah Joy
+Writing Credits (in alphabetical order)  
+	Michael Mason	
+	James Jensen Read
+
+Cast (in credits order)  
+James Jensen Read
+	Elder Read
+Michael Mason
+	Zee
+Brian Grandis
+	Elder Grandis
+Helen Whealdon
+	Sister Mason
+Karen Whealdon
+	Sister Smith
+
+Rest of Cast listed alphabetically:
+Steve Boyd
+	Zombie
+Lanies Bryant
+	Tyrone
+Becky Damaske
+	Zombie
+Eevin Dunning
+	Zombie
+Allen Elder
+	Alpha Zombie
+Thomas Ferranti
+	Bishop Price
+Shannon Gibson
+	Jackie
+Michael Huey
+	Al Ice (A.P. / Assitant to the Mission President)
+Jamie Knight
+	Zombie
+Chris Lewis
+	Zombie
+Matthew Rocca
+	Cooper
+David Rodgers
+	Zombie
+Jenay Sarah
+	Nicky
+Lizeth Lanz Schattner
+	Church goer
+Anna Simmons
+	Zombie
+Mason Wolff
+	Zombie
+Joel Zamarron
+	Zombie
+
+Executive Producer 
+	Michael Mason
+
+Cinematography
+Michael Mason	
+
+Film Editing
+	Michael Mason	
+
+Makeup Department 
+Key Makeup Artist
+	Becky Damaske
+Makeup Artist 
+	Lizeth Lanz Schattner
+
+Special Effects
+	Michael Mason
+
+Thanks 
+	Becky Damaske
+	Lizeth Lanz Schattner
+<===============================================================>
+Mission Apocalypse 
+Basic Plot
+	This is the story of Two Mormon Missionaries on a mission to spread the word of Jesus Christ of Latter Day Saints in a zombie infested apocalypse.
+
+Directed by 
+	Michael Mason
+Writer
+	James Jensen Read	
+Executive Producer
+	Michael Mason
+Producer 
+	James Jensen Read
+
+Cinematography
+	Michael Mason	
+
+Film Editing
+	Michael Mason	
+	James Jensen Read
+
+Makeup Department
+Makeup Artist 
+	John Aviles
+Makeup Artist
+	Becky Damaske
+Makeup Artist
+	Anni Ma
+Makeup Artist
+	Michael Mason
+
+Special Effects
+	Michael Mason
+
+Casting Department
+Executive in Charge of Casting
+	Michael Mason
+
+Main Cast (in credits order)  
+James Jensen Read
+	Elder Read
+Michael Mason
+	Zee
+Helen Whealdon
+	Sister Mason
+Karen Whealdon
+	Sister Smith
+Brian Grandis
+	Elder Grandis
+
+Rest of cast listed alphabetically:
+Mark Atkinson
+	Dad
+Michele Brindle
+	Zombie
+Tom Carrington
+	Zombie
+Laura Bianca Collins
+	Zombie
+Bryant Colmenero
+	Elder Diamond
+Becky Damaske
+	Zombie
+Eevin Dunning
+	Church Goer
+Allen Elder
+	Alpha Zombie
+Kristin Naomi Garcia
+	Mom
+Susie Gibson-Coutts
+	Female Zombie
+Michael Huey
+	Al Ice (A.P. / Assitant to the Mission President)
+Jacob Alan James
+	Zombie
+Austin Juarez
+	Zombie
+Jamie Knight
+	Evy Lockwood
+Chris Lewis
+	Zombie
+Anni Ma
+	Zombie #1
+Mercedes Marie
+	Jiji
+Stephen Morey
+	Caged Zombie
+Juan Carlos Padilla
+	Zombie
+David Rodgers
+	Zombie
+Lizeth Lanz Schattner
+	Church Goer
+Elizabeth Betsy Toker (as Elizabeth Toker)
+	Zombie
+Sophie Wood
+	Female Zombie
+Joel Zamarron
+	Church Goer
+Gerren Hall
+	Zombie Victim (uncredited)
+
+<===============================================================>
+A Harlequin in Darkness
+Basic Plot
+	A worthless graphic painting becomes priceless overnight. Venessa and Ryvan are two museum employees who plan to steal it. The only problem: This very painting is haunted...
+
+Director 
+	Michael Mason
+Writing Credits (in alphabetical order)  
+	Michael Leland Burton	
+	Michael Mason	
+Executive Producer
+	Michael Mason
+Cinematography
+	Michael Mason	
+Film Editing
+	Michael Mason	
+
+Special Thanks 
+	Mark Maher
+	Stephen Morey
+	Exclusive Collections Art Gallery
+		Samantha Padilla
+		Paul Lotz	
+
+Main Cast (in credits order)  
+Michael Leland Burton
+	Ryvan
+Laura Bianca Collins
+	Venessa
+Thomas Ferranti
+	Gunther
+
+Rest of Cast listed alphabetically
+Tom Carrington
+	Vincent
+Bill Ims
+	Bill
+Lorena Landish
+	Honey
+Michael Mason
+	Harlequin, Ace Redfire
+Stephen Morey
+	Pizza Guy
+Fatima Pimienta
+	Becky the Maid
+Mark Valeriano
+	Joseph
+Chad Whitson
+	Chris Charger
+Lauren Yowell
+	Leda
+
+<===============================================================>
+Whitefire
+Director
+	Michael Mason
+Writer  
+	Michael Mason	
+Producer
+	Michael Mason
+Cinematography
+	Michael Mason
+Film Editing
+	Michael Mason
+Costume Design
+	Michael Mason	
+
+Makeup Department 
+Makeup Artist
+	Mercedes Marie
+Makeup Artist 
+	Nicolette Voorhies
+
+Stunts 
+	Jennifer Amorelli
+	Jujo Ballo
+	Niko Dalman
+	Brian Grandis
+	Michael Mason
+
+Music Department 
+Composer: Theme music
+	Jay Fernandes
+Composer: Additional music
+	Christine Mason
+
+Main Cast (in credits order)  
+Michael Mason
+	Ace Redfire
+Alyse Verbane
+	Dana Hartmann, The Masked Huntress
+Thomas Ferranti
+	Raddic (voice)
+Brian Grandis
+	Brian The Mercenary
+Bill Ims (as William Ims)
+	Bill the Mercenary
+Jamie Hendrickson
+	Lady Death
+Tyler Mascaro
+	Mercenary 1
+Mike Osgood (as Michael Osgood)
+	Mercenarie 3
+Helen Whealdon
+	Dr. Claire
+
+Rest of Cast, listed alphabetically
+Brittany Alexander
+	Passion the Fairy
+Jennifer Amorelli
+	Jackie Lantern
+Marie Andersen
+	Joey Jones
+Anayanci Anguiano
+	Cinder
+Invictus Animus
+	Alternating Current
+Sinjun Balabanoff
+	Hans
+Amie Louise Baldwin
+	Reporter
+Jujo Ballo
+	MAYO Terrorist
+Nicola Lee Barrett
+	Dagger
+Danielle Barzilai
+	Daisy
+Tyson Bay
+	Adam Clocksworth
+Devon Beatty
+	Evy
+Dorian Bell
+	Jirax
+Kalani Bellofatto
+	Cocoa
+Mark Benrimoj
+	Mark
+Jenna Biggane
+	Sobe
+Michael Leland Burton
+	Zombie 1
+LaTeasha Leigh Clark
+	Ninja Cherry
+Laura Bianca Collins
+	Venessa
+Niko Dalman
+	Terrorist
+Shyla Day
+	Sexy Terrorist #3
+Paloma Dominguez
+	Roxy Rocket
+Jessi Duran
+	Agent Zelda
+Allen Elder
+	Big Terrorist
+Lisa Fellows
+	Toddy
+Giorgia Garrett
+	Bella
+Alyssa Glitters
+	Fire Dancer
+Tavish Grade
+	Terra
+Mark Hoke
+	German Terrorist 2
+Erika Hoskings
+	Selena
+Jenifer Huber
+	Bleu
+Kenneth Jenkins
+	Terrorist
+June Jones
+	German Terrorist 3
+Rinali Kemp
+	Undercover Huntress
+Nikki Kennedy
+	Star
+Taylor Koster
+	Rose
+Aimee La Joie
+	Kimber
+Nick Lane
+	Jagg
+Savannah Fairchild Lowe
+	Charlotte
+Morgan Macedo
+	Shooter
+Mercedes Marie
+	Kylie 'Jiji' Reese
+James Marshall
+	Rick Mormon
+Maxine Marshall
+	Maxine the Cohost
+Alexandra Mason
+	Angel
+Wayne Mayers
+	Tom Bruckhow
+Michelle M. Maynard-Medina
+	Raven
+Ian Mckinnon
+	German Terrorist
+Paul McNertney
+	RV Terrorist
+Stephen Morey
+	Twinker
+Danny Morris
+	Terrorist General
+Aimee Mullahey
+	Sprinkles
+Jeselle Myers
+	Foxx
+Mathew Olmstead
+	Tiny the Giant
+Alanna Ozun
+	Puppett
+KC Marie Pandell
+	Stacy
+Kelsey Payne
+	Zombie 2
+Fatima Pimienta
+	Becky
+James Jensen Read
+	Clairance the Rabbit
+Kim Reed
+	Daphnie
+James Regello
+	Vikodin the Axeman
+Lindsay Kaye Sainato
+	Michellica
+Breana Schmidt
+	Bill's wife
+Shawnna Sims
+	Eevee Bitch
+Elisabeth Elaine Soloman
+	Trixy
+Joshua Sprague
+	The Mime
+Ron Stachewicz
+	Mr. Grizzlewench
+Allison Sutch
+	Mrs. Clause
+Desiree Rene Trejo
+	Victim 1
+Jessica Trujillo
+	Sexy Terrorist #2
+Joshua Virgin
+	Eyezak Blastmov
+Alec Voorhies
+	Deathface
+Nicolette Voorhies
+	Blasting Booty Betty
+Janine Walz
+	Boomer
+Venessa Ward
+	Dr. Natasha
+Ashley Warrick
+	Nicky
+Erica Marie Weisz
+	Candy
+Nicole Worley
+	Princess Birdy
+Megan Zuckowich
+	Alexandria Redfire
+
+<===============================================================>
+The Stranglehold: Pillagers of the Lost Treasure
+Director
+	Michael Mason
+Writing Credits (in alphabetical order)  
+	Dennis Hanon	
+	Michael Mason
+Executive Producer
+	Dennis Hanon
+Executive Producer
+	Michael Mason
+Cinematography
+	Michael Mason	
+Film Editing
+	Michael Mason
+
+Cast  
+Allen Elder
+	Bruiser
+Dennis Hanon
+	Captain Syn
+Mercedes Marie
+	Ninja Jiji
+Michael Mason
+	Ninja Rayu
+Stephen Morey
+	Ninja 1
+<===============================================================>
+The Deep End
+Director
+	Michael Mason
+Writer
+	Michael Huey
+Producer
+	Michael Huey
+Producer
+	Helen Whealdon
+Cinematography
+	Michael Mason
+Film Editing
+	Michael Huey
+
+Cast  
+Michael Huey
+	Bobby
+Sophia Szentes
+	Mel
+<===============================================================>
+School Is for L.O.S.E.R.S.
+Director
+	Michael Mason
+Writers
+	Michael Mason
+	Dennis Hanon	
+Executive Producer
+	Dennis Hanon
+Producer
+	Michael Mason
+Cinematography
+	Michael Mason
+Film Editing
+	Michael Mason
+
+Cast  
+Lisa Fellows
+	Ethanol Toddy
+Dennis Hanon
+	Doc Synchronous
+J. Michael Lanaghan (as Michael Lanaghan)
+	Phineas Sinclair
+Michael Mason
+	Dr. Halloween
+<===============================================================>
+Treachery and a Dead Man's Promise
+Basic Plot
+	Pirates encounter pesky time traveling ninjas as they seek stolen treasure, rum, and wenches
+Director
+	Michael Mason
+Writers
+	Michael Mason, Ron Stachewicz
+Cinematography
+	Michael Mason
+Film Editing
+	Michael Mason
+Makeup Department
+	Lisa Fellows
+Camera and Electrical Equipment
+Camera Operator
+	Michael Mason
+Assitant Camera
+	Mary Stachewicz
+
+Cast
+Michael Mason
+	Ninja Rayu
+Ron Stachewicz
+	Oderlesseye
+Kate Gordon
+	Lucy The Sea Hag
+Denyce Gegan
+	Ninja Master
+Brian Grandis
+	Ninja #1
+Debbie Hanon
+	Wench #2
+Dennis Hanon
+	Captain Syn
+Robert Jeans
+	Reeking Jake
+Beverly Libby
+	Merchant
+Mariah Sue Lovett
+	Mary Black
+Jeffrey Alan Madl
+	Mad L
+Terry Mendoza
+	Crusty Scuppers, Ninja #2
+Mathew Olmstead
+	Thomas the Tall
+Allison Sutch
+	Wench #1
+David Williams
+	Mad Davy Flint
+<===============================================================>
+

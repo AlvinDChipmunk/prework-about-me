@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test CineMason Productions - Actor FName LName</title>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta name = "format-detection" content = "telephone=no" />
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link rel="stylesheet" href="css/bootstrap.css" >
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/touchTouch.css">
+    
+	<script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+    <script src="js/superfish.js"></script>
+    <script src="js/jquery.mobilemenu.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.ui.totop.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/jquery.equalheights.js"></script>
+    <script  src="js/touchTouch.jquery.js"></script>
+    
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script>	
+<script>
+    
+    $(window).load(function() {  
+    var $container = $('#container');
+    //Run to initialise column sizes
+    updateSize();
+
+    //Load masonry when images all loaded
+    $container.imagesLoaded( function(){
+
+        $container.isotope({
+            // options
+            itemSelector : '.element',	
+            layoutMode : 'masonry',
+            transformsEnabled: true,
+            columnWidth: function( containerWidth ) {
+                containerWidth = $browserWidth;
+                return Math.floor(containerWidth / $cols);
+              }
+        });
+    });
+    
+	    // update columnWidth on window resize
+    $(window).smartresize(function(){  
+        updateSize();
+        $container.isotope( 'reLayout' );
+    });
+	
+    //Set item size
+    function updateSize() {
+        $browserWidth = $container.width();
+        $cols = 4;
+
+        if ($browserWidth >= 1170) {
+            $cols = 4;
+        }
+        else if ($browserWidth >= 800 && $browserWidth < 1170) {
+            $cols = 3;
+        }
+        else if ($browserWidth >= 480 && $browserWidth < 800) {
+            $cols = 2;
+        }
+        else if ($browserWidth >= 320 && $browserWidth < 480) {
+            $cols = 1;
+        }
+        else if ($browserWidth < 401) {
+            $cols = 1;
+        }
+        //console.log("Browser width is:" + $browserWidth);
+        //console.log("Cols is:" + $cols);
+
+        // $gutterTotal = $cols * 20;
+		$browserWidth = $browserWidth; // - $gutterTotal;
+        $itemWidth = $browserWidth / $cols;
+        $itemWidth = Math.floor($itemWidth);
+
+        $(".element").each(function(index){
+            $(this).css({"width":$itemWidth+"px"});             
+        });
+
+	  var $optionSets = $('#options .option-set'),
+	      $optionLinks = $optionSets.find('a');
+
+	  $optionLinks.click(function(){
+	    var $this = $(this);
+	    // don't proceed if already selected
+	    if ( $this.hasClass('selected') ) {
+	      return false;
+	    }
+	    var $optionSet = $this.parents('.option-set');
+	    $optionSet.find('.selected').removeClass('selected');
+	    $this.addClass('selected');
+
+	    // make option object dynamically, i.e. { filter: '.my-filter-class' }
+	    var options = {},
+	        key = $optionSet.attr('data-option-key'),
+	        value = $this.attr('data-option-value');
+	    // parse 'false' as false boolean
+	    value = value === 'false' ? false : value;
+	    options[ key ] = value;
+	    if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+	      // changes in layout modes need extra logic
+	      changeLayoutMode( $this, options )
+	    } else {
+	      // otherwise, apply new options
+	      $container.isotope( options );
+	    }
+	    
+	    return false;
+	  });		
+
+    };
+
+        // Initialize the gallery
+        $('.thumb').touchTouch();
+    
+    });
+    
+  </script>
+
+    <!--[if lt IE 9]>
+    <div style='text-align:center'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div>  
+    <link rel="stylesheet" href="assets/tm/css/tm_docs.css" type="text/css" media="screen">
+    <script src="assets/assets/js/html5shiv.js"></script> 
+    <script src="assets/assets/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+		<!--==============================header=================================-->
+		<header id="header">
+			<div class="container">
+				<h1 class="navbar-brand navbar-brand_">
+					<a href="index.html"><img alt="CineMason Productions words only logo" src="img/logo_sm_01_onlyWords.png"></a>
+					</h1>
+			</div>
+			
+			<div class="menuheader">
+				<div class="container">
+					<nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
+						<ul class="nav sf-menu">
+							<li class="active"><a href="index.html"                                                     >Home</a></li>
+							<li class="active"><a href="trailers.html"                                                  >Trailers</a></li>
+
+							<li class="active"><a href="feature_length.html"                                            >Feat. Lgth.</a>
+							<ul>
+								<li><img src="img/arrowup.png" alt="">
+								<a     href="http://www.imdb.com/title/tt4504638/?ref_=nv_sr_2"        target="_blank" >Mission Apocalypse</a></li>
+								<li><a href="http://www.imdb.com/title/tt5608182/?ref_=nv_sr_3"        target="_blank" >Mission Apocalypse pt. 2</a></li>
+								<li><a href="http://www.imdb.com/title/tt2602256/?ref_=fn_al_tt_1"     target="_blank" >Whitefire</a></li>
+								<li><a href="http://www.imdb.com/title/tt4991434/?ref_=nv_sr_1"        target="_blank" >A Harlequin in Darkness</a></li>
+							</ul></li>
+
+							<li class="active"><a href="short_films.html"                                               >Short Films</a>
+							<ul>
+								<li><img src="img/arrowup.png" alt="">
+								<a     href="http://www.imdb.com/title/tt5043532/?ref_=nm_flmg_cin_4"  target="_blank" >The Stranglehold: Pillagers of the Lost Treasure</a></li>
+								<li><a href="http://www.imdb.com/title/tt4530892/?ref_=nm_flmg_cin_6"  target="_blank" >The Deep End</a></li>
+								<li><a href="http://www.imdb.com/title/tt5000742/?ref_=nm_flmg_cin_7"  target="_blank" >School Is for L.O.S.E.R.S.</a></li>
+								<li><a href="http://www.imdb.com/title/tt3607202/?ref_=nm_flmg_cin_9"  target="_blank" >Treachery and a Dead Man's Promise</a></li>
+							</ul></li>
+
+							<li class="active"><a href="youtube_videos.html"                                            >YouTube Vid.</a>
+							<ul>
+								<li><img src="img/arrowup.png" alt="">
+								<a     href="https://www.youtube.com/watch?v=8-As7ZEtT3U"              target="_blank" >The Demon Couch</a></li>
+								<li><a href="#"                                                                        >First Date</a></li>
+								<li><a href="#"                                                                        >Cursed Mistletoe</a></li>
+								<li><a href="#"                                                                        >Fandoms Anonymous</a></li>
+							</ul></li>
+
+							<li class="active"><a href="news_events.html"                                               >News/Events</a>
+							<ul>
+								<li><a href="news_events.html#CinemasonLatestNews"                                     >Latest</a></li>
+								<li><a class="last" href="news_events.html#CinemasonNewsArchive"                       >Archive</a></li>
+							</ul></li>
+
+							<li class="active"><a href="shop.html"                                                      >Shop</a></li>
+							<li class="active"><a href="contact.html"                                                   >Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+<!--==============================content=================================-->
+<div id="content">
+    <!--==============================row7=================================-->
+    <div class="row_12">
+        <div class="container">
+                <div class="row">
+				<div class="col-lg-8 col-md-8 col-sm-8">
+
+					<div class="row links">
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<h2 class="pad_bot2">Work History</h2>
+							
+							<h3><a class="btn-link4" href="#">Company # 1</a></h3>
+							<p><i>Start Date 1 - End Date 1</i><br>
+							<b>Job Title or Acting Role # 1</b><br>
+							Basic description of job and responsibilities and / or role in movie or show project.  Include any special skills used and / or demonstrated.
+							</p>
+							
+							<h3><a class="btn-link4" href="#">Company # 2</a></h3>
+							<p><i>Start Date 2 - End Date 2</i><br>
+							<b>Job Title or Acting Role # 2</b><br>
+							Basic description of job and responsibilities and / or role in movie or show project.  Include any special skills used and / or demonstrated.
+							</p>
+							
+							<h3><a class="btn-link4" href="#">Company # 3</a></h3>
+							<p><i>Start Date 3 - End Date 3</i><br>
+							<b>Job Title or Acting Role # 3</b><br>
+							Basic description of job and responsibilities and / or role in movie or show project.  Include any special skills used and / or demonstrated.
+							</p>
+							
+							<h3><a class="btn-link4" href="#">Company # 4</a></h3>
+							<p><i>Start Date 4 - End Date 4</i><br>
+							<b>Job Title or Acting Role # 4</b><br>
+							Basic description of job and responsibilities and / or role in movie or show project.  Include any special skills used and / or demonstrated.
+							</p>
+						</div>
+						
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<h2 class="pad_bot2">Education</h2>
+							
+							<h3><a class="btn-link4" href="#">School # 1</a></h3>
+							<p><i>Start Date 1 - End Date 1</i><br>
+							<b>Degree or Course of Study # 1</b><br>
+							Basic description of Degree's or Course of Study's purpose and uses.  Include any special skills or knowledge developed, expanded, or of rarity.
+							</p>
+							
+							<h3><a class="btn-link4" href="#">School # 2</a></h3>
+							<p><i>Start Date 2 - End Date 2</i><br>
+							<b>Degree or Course of Study # 2</b><br>
+							Basic description of Degree's or Course of Study's purpose and uses.  Include any special skills or knowledge developed, expanded, or of rarity.
+							</p>
+							
+							<h3><a class="btn-link4" href="#">School # 3</a></h3>
+							<p><i>Start Date 3 - End Date 3</i><br>
+							<b>Degree or Course of Study # 3</b><br>
+							Basic description of Degree's or Course of Study's purpose and uses.  Include any special skills or knowledge developed, expanded, or of rarity.
+							</p>
+							
+							<h3><a class="btn-link4" href="#">School # 4</a></h3>
+							<p><i>Start Date 4 - End Date 4</i><br>
+							<b>Degree or Course of Study # 4</b><br>
+							Basic description of Degree's or Course of Study's purpose and uses.  Include any special skills or knowledge developed, expanded, or of rarity.
+							</p>
+						</div>
+					</div>
+            		</div>
+				
+            		<div class="col-lg-4 col-md-4 col-sm-4">
+                        <h2>References: Professional</h2>
+                        <ul class="list2">
+                            <li><a href="#">Email Link of Contact #1</a></li>
+                            <li><a href="#">Email Link of Contact #2</a></li>
+                            <li><a href="#">Email Link of Contact #3</a></li>
+                            <li><a href="#">Email Link of Contact #4</a></li>
+                            <li><a href="#">Email Link of Contact #5</a></li>
+                        </ul> 
+                        <h2>References: Personal</h2>
+                        <ul class="list2">
+                            <li><a href="#">Email Link of Friend #1</a></li>
+                            <li><a href="#">Email Link of Friend #2</a></li>
+                            <li><a href="#">Email Link of Friend #3</a></li>
+                            <li><a href="#">Email Link of Friend #4</a></li>
+                            <li><a href="#">Email Link of Friend #5</a></li>
+                        </ul> 
+    	           </div>
+                </div>
+        </div>
+    </div>
+    <!--==============================row6=================================-->
+    <div class="row_6">
+        <div class="container">
+            <h2 class="pad_bot3">Projects / Jobs</h2>
+
+            <div class="row">
+        		<div class="col-lg-12 col-md-12 col-sm-12">
+			   <div id="options" class="clearfix">
+                      <ul id="filters" class="pagination option-set clearfix" data-option-key="filter">
+                        <li><a href="#filter" data-option-value="*" class="selected">Show all</a></li>
+                        <li><a href="#filter" data-option-value=".Resume_Img01">Resume Img #1</a></li>
+                        <li><a href="#filter" data-option-value=".Resume_Img02">Resume Img #2</a></li>
+                        <li><a href="#filter" data-option-value=".Resume_Img03">Resume Img #3</a></li>
+                        <li><a href="#filter" data-option-value=".Resume_Img04">Resume Img #4</a></li>
+                        <li><a href="#filter" data-option-value=".Resume_Img05">Resume Img #5</a></li>
+                        <li><a href="#filter" data-option-value=".Resume_Img06">Resume Img #6</a></li>
+                      </ul>
+                  </div>
+			   <!-- #options -->
+                  <div class="containerExtra">
+                  <div id="container" class="clearfix">
+
+                    <div class="element transition Resume_Img01" data-category="transition">
+                    	<a href="img/testResume_Img01.png" class="thumb">
+					<figure class="img-polaroid"><img src="img/testResume_Img01.png" alt="Resume Image # 1"></figure>
+					<span class="description">
+					<p><center><strong>Resume Image # 1</strong></center></p>
+					<p>Basic description of project or job seen in Resume Image # 1.  Probably needs two or three sentences.</a>
+					<br><br>YouTube trailer for <a href="#" target="_blank">"Project seen in Image # 1"</a>
+					<br>Facebook Page for <a href="#" target="_blank">"Project seen in Image # 1"</a></p>
+					</span>
+                    </div>
+                    <div class="element transition Resume_Img02" data-category="transition">
+                    	<a href="img/testResume_Img02.png" class="thumb">
+					<figure class="img-polaroid"><img src="img/testResume_Img02.png" alt="Resume Image # 2"></figure>
+					<span class="description">
+					<p><center><strong>Resume Image # 2</strong></center></p>
+					<p>Basic description of project or job seen in Resume Image # 2.  Probably needs two or three sentences.</a>
+					<br><br>YouTube trailer for <a href="#" target="_blank">"Project seen in Image # 2"</a>
+					<br>Facebook Page for <a href="#" target="_blank">"Project seen in Image # 2</a></p>
+					</span>
+                    </div>
+                    <div class="element transition Resume_Img01" data-category="transition">
+                    	<a href="img/testResume_Img03.png" class="thumb">
+					<figure class="img-polaroid"><img src="img/testResume_Img03.png" alt="Resume Image # 3"></figure>
+					<span class="description">
+					<p><center><strong>Resume Image # 3</strong></center></p>
+					<p>Basic description of project or job seen in Resume Image # 3.  Probably needs two or three sentences.</a>
+					<br><br>YouTube trailer for <a href="#" target="_blank">"Project seen in Image # 3"</a>
+					<br>Facebook Page for <a href="#" target="_blank">"Project seen in Image # 3"</a></p>
+					</span>
+                    </div>
+                    <div class="element transition Resume_Img04" data-category="transition">
+                    	<a href="img/testResume_Img04.png" class="thumb">
+					<figure class="img-polaroid"><img src="img/testResume_Img04.png" alt="Resume Image # 4"></figure>
+					<span class="description">
+					<p><center><strong>Resume Image # 4</strong></center></p>
+					<p>Basic description of project or job seen in Resume Image # 4.  Probably needs two or three sentences.</a>
+					<br><br>YouTube trailer for <a href="#" target="_blank">"Project seen in Image # 4"</a>
+					<br>Facebook Page for <a href="#" target="_blank">"Project seen in Image # 4"</a></p>
+					</span>
+                    </div>
+                    <div class="element transition Resume_Img05" data-category="transition">
+                    	<a href="img/testResume_Img05.png" class="thumb">
+					<figure class="img-polaroid"><img src="img/testResume_Img05.png" alt="Resume Image # 5"></figure>
+					<span class="description">
+					<p><center><strong>Resume Image # 5</strong></center></p>
+					<p>Basic description of project or job seen in Resume Image # 5.  Probably needs two or three sentences.</a>
+					<br><br>YouTube trailer for <a href="#" target="_blank">"Project seen in Image # 5"</a>
+					<br>Facebook Page for <a href="#" target="_blank">"Project seen in Image # 5"</a></p>
+					</span>
+                    </div>
+                    <div class="element transition Resume_Img06" data-category="transition">
+                    	<a href="img/testResume_Img06.png" class="thumb">
+					<figure class="img-polaroid"><img src="img/testResume_Img06.png" alt="Resume Image # 6"></figure>
+					<span class="description">
+					<p><center><strong>Resume Image # 6</strong></center></p>
+					<p>Basic description of project or job seen in Resume Image # 6.  Probably needs two or three sentences.</a>
+					<br><br>YouTube trailer for <a href="#" target="_blank">"Project seen in Image # 6"</a>
+					<br>Facebook Page for <a href="#" target="_blank">"Project seen in Image # 6"</a></p>
+					</span>
+                    </div>
+
+		       </div>
+               </div>
+	        </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--==============================footer=================================-->
+<footer>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 footercol">
+                <ul class="social_icons clearfix">
+                     <li><a href="https://www.youtube.com/channel/UC7r1Wc1yobnBB7St1MLdh8Q" target="_blank"><img src="img/follow_icon5.png" alt="Follow Cinemason Productions at YouTube"></a></li>
+                     <li><a href="#" target="_blank"><img src="img/follow_icon1.png" alt="Follow Cinemason Productions at Facebook"></a></li>
+                     <li><a href="#" target="_blank"><img src="img/follow_icon2.png" alt="Follow Cinemason Productions at Google +"></a></li>
+                     <li><a href="#" target="_blank"><img src="img/follow_icon3.png" alt="Follow Cinemason Productions at Twitter"></a></li>
+                     <li><a href="#" target="_blank"><img src="img/follow_icon4.png" alt="Follow Cinemason Productions at Instagram"></a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
+                <a class="smalllogo2 logo" href="index.html"><img alt="CineMason Productions words only logo" src="img/logo_sm_01_onlyWords.png"></a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 footercol">
+                <p class="footerpriv">&copy; 2014 &bull; <a class="privacylink" href="privacy-policy.html">Privacy policy</a><!-- {%FOOTER_LINK} --></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container">
+                <br><p><b>Design Credits:</b> Design based from the "Fine Dining" free web site template offered by the company <a href="https://www.ipage.com/ipage/responsive-website-templates/" target="_blank">iPage</a>, licensed under a Creative Commons Attribution 3.0 License.
+	    	  <br>Information presented on this web site is copyrighted by Cinemason Productions.
+	    	  <br>This web site otherwise authored and created by <a href="mailto:alvinrevilas@yahoo.com?subject=Inquiry%20from%20Cinemason%20website:%20Contacting%20Alvin%20about%20website%20design" target="_blank">Alvin Revilas</a>.</p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/tm-scripts.js"></script>
+</body>
+</html>
