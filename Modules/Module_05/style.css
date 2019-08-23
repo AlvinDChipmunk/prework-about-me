@@ -1,0 +1,55 @@
+h1 {
+    text-align: center;
+}
+
+p.AlvRed {
+    color: red;
+}
+
+p.AlvBlue {
+    color: blue;
+}
+
+p.AlvGreen {
+    color: green;
+}
+
+p.AlvOrange {
+    color: orange;
+}
+
+p.AlvFontBIG {
+    font-size: 28px;
+}
+
+p.AlvFonttiny {
+    font-size: 8px;
+}
+
+p.AlvCentered {
+    text-align: center;
+}
+
+p.AlvBold {
+    font-weight: bold;
+}
+
+p.AlvBold {
+    font-weight: bold;
+}
+
+p.AlvFontFamilyImpact {
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+p.styledFont {
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+img.AlvImgBorder {
+    width: 650px;
+    padding: 0px;
+    border: 12px solid #e6781e;
+}
